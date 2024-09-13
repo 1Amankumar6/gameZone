@@ -7,7 +7,6 @@
 body{
   background-image: url(images/backGround.jpg) ;
   object-fit: cover;
-  /* scale: 0.8; */
 }
 
 .background {
@@ -188,4 +187,102 @@ body{
   100% {
     opacity: 0;
   }
+}
+
+@media (max-width:600px) {
+  body{
+    background: white ;
+  }
+  
+  .background {
+    margin-top: 15px;
+  }
+  
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  
+  .heading{
+    color: #efbf38;
+    font-size: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    text-shadow: 1px 2px 3px;
+  }
+  .titleFont a {
+    font-size: 40px;
+    text-shadow: 2px 3px 3px purple;
+  }
+  
+  .box-1 {
+    border: 5px solid black ;
+    padding: 10px;
+    margin: 0 20px;
+    filter: drop-shadow(2px 4px 6px black);
+    background-color: transparent;
+  }
+  
+  .box-1 img {
+    height: 320px;
+    width: 440px;
+    object-fit: cover;
+  }
+  
+  #add-more {
+    height: 350px;
+    width: 460px;
+    background-color: grey;
+    border: 5px black solid;
+  }
+  
+  #add-more i {
+    scale: 9 ;
+    filter: drop-shadow(2px);
+  }
+  
+  #page2 {
+    min-height: 50vh;
+    width: 100%;
+    background: linear-gradient(black white 45deg);
+    padding: 8vw 0;
+    position: relative;
+  }
+  
+   #moving-text {
+    overflow-x: none;
+    white-space: wrap;
+  }
+  
+  #moving-text::-webkit-scrollbar {
+    display:inline;
+  }
+  
+   .con {
+    scale: 1;
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: move;
+    animation-duration: 0s;
+    animation-timing-function: none;
+    animation-iteration-count: none;
+  }
+  .background{
+    display: block;
+    margin-top: 24px;
+  }
+
+  .loader h1 {
+    margin-top: -40%;
+    font-size: 12vw;
+    text-align: center;
+  }
+  
+  .loader h2 {
+    font-size: 10vw;
+    text-align: center;
+    font-family: "VT323", monospace;
+    font-weight: 600;
+  }  
 }

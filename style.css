@@ -1,125 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body {
-  background-image: url(images/backGround.jpg);
-  object-fit: cover;
+/* .whole-container{
+  scale: 0.8;
 }
 
-.background {
-  margin-top: 20px;
+#logo{
+  font: 1.35em sans-serif;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-left: 20px;
 }
 
-::-webkit-scrollbar {
-  display: none;
+#nav-bar{
+  background-color: #8b966c;
+  padding: 10px;
+  color: whitesmoke;
+  font-size: 20px;
+  z-index: 999 ;
 }
 
-.heading {
-  color: #efbf38;
-  font-size: 80px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: 600;
-  text-align: center;
-  text-shadow: 2px 5px 5px tomato;
-}
-
-.box-content {
+#nav-bar ul{
+  list-style: none;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} */
+
+/* Basic reset and scaling for the whole container */
+.whole-container {
+  scale: 0.9;
 }
 
+/* Styling for the logo */
+#logo {
+  font: 1.35em sans-serif;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  margin-left: 20px;
+}
+
+/* Styling for the navigation bar */
+#nav-bar {
+  background-color: #8b966c;
+  padding: 10px;
+  color: whitesmoke;
+  font-size: 20px;
+  z-index: 99;
+  position: relative; /* Required for positioning dropdown menu */
+}
+
+#nav-bar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#nav-bar li {
+  position: relative; /* For dropdown positioning */
+}
+
+#nav-bar a {
+  color: whitesmoke; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+#nav-bar a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Style for the menu button */
+#menu-button {
+  display: none; /* Hidden by default */
+  cursor: pointer; /* Pointer cursor for the button */
+}
+
+#menu-button i {
+  font-size: 24px; /* Adjust icon size */
+}
+
+/* Dropdown menu styling */
+#dropdown-menu {
+  display: none; /* Hidden by default */
+  position: absolute; /* Position relative to the menu button */
+  top: 100%; /* Place below the nav items */
+  left: 0;
+  background-color: #8b966c;
+  width: 100%;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Add shadow for better visibility */
+}
+
+#dropdown-menu a {
+  display: block;
+  padding: 10px 20px; /* Padding for dropdown items */
+  color: whitesmoke; /* Link color */
+}
+
+#dropdown-menu a:hover {
+  background-color: #6a7b5b; /* Background color on hover */
+}
+
+/* Ensure the container and boxes are sized correctly */
+.background {
+  overflow-x: auto; /* Allow horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical scrollbar if present */
+  width: 98vw; /* Set container width to 100% of viewport width */
+  height: auto; /* Set container height */
+  display: flex; /* Align children horizontally */
+  white-space: nowrap; /* Prevent line breaks in the container */
+  box-sizing: border-box; /* Include padding and border in width */
+  padding: 10px; /* Space around the container's content */
+  position: relative; /* For positioning the pseudo-element */
+}
+
+/* .background::-webkit-scrollbar {
+  display: none;
+} */
+
+/* Hide scrollbar for Firefox */
+/* .background {
+  scrollbar-width: none; 
+} */
+
+/* Style for the vertical scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* Reduced width for the scrollbar */
+}
+
+/* Track (part of the scrollbar not covered by the thumb) */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Light background for the scrollbar track */
+  border-radius: 10px; /* Optional: rounded corners for the track */
+}
+
+/* Handle (part of the scrollbar that is dragged) */
+::-webkit-scrollbar-thumb {
+  background: #333; /* Dark color for the scrollbar handle */
+  border-radius: 10px; /* Optional: rounded corners for the handle */
+}
+
+/* Optional: Hover effect for the scrollbar handle */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Slightly lighter dark color on hover */
+}
+
+/* Firefox scrollbar styling */
+.scrollable-element {
+  scrollbar-width: thin; /* Thin scrollbar */
+  scrollbar-color: #333 #f0f0f0; /* Dark handle and light track for Firefox */
+}
+
+
+/* Wrapper to ensure items stay in a row */
+.background-wrapper {
+  display: flex; /* Align children horizontally */
+  gap: 40px; /* Space between each .boxContent */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  align-items: stretch; /* Align items to fill container height */
+  height: 100%; /* Ensure wrapper takes full height */
+}
+
+/* Style for each box content */
+.boxContent {
+  width: 430px; /* Set width of each boxContent */
+  height: 320px; /* Set height of each boxContent */
+  box-sizing: border-box; /* Include padding and border in width/height */
+  transition: transform 0.3s ease-in-out; /* Smooth scale transition */
+  display: flex; /* Align items inside boxContent */
+  flex-direction: column; /* Stack image and title vertically */
+  justify-content: center; /* Center content vertically */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+/* Scale effect on hover */
+.boxContent:hover {
+  transform: scale(1.15); /* Scale up the boxContent */
+}
+
+/* Style for images inside .box-1 */
+.box-1 img {
+  width: 98%; /* Make images responsive to the container's width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  border: 2px dashed #ccc; /* Example border style */
+}
+
+/* Title font styling */
 .titleFont {
   text-align: center;
+  margin-top: 10px; /* Space between image and title */
 }
 
-.titleFont a {
-  font-size: 40px;
-  font-weight: 600;
-  text-decoration: none;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: rgba(178, 52, 178, 0.936);
-  text-shadow: 2px 10px 10px purple;
-}
-
-.box-1 {
-  border: 2px solid black;
-  padding: 10px;
-  margin: 0 10px;
-  border-radius: 15px;
-  filter: drop-shadow(2px 4px 6px black);
-  background-color: black;
-}
-
-.box-1 img {
-  height: 330px;
-  width: 450px;
-  object-fit: contain;
-}
-
+/* Optional: styling for the add-more box */
 #add-more {
-  height: 350px;
-  width: 460px;
-  background-color: grey;
-  border: 5px black solid;
-}
-
-#add-more i {
+  background-color: #f0f0f0; /* Example background color */
+  border: 2px dashed #ccc; /* Example border style */
   display: flex;
   justify-content: center;
   align-items: center;
-  scale: 10;
-  font-weight: 100;
-  margin-top: 150px;
+  font-size: 24px; /* Example icon size */
+  cursor: pointer; /* Show a pointer cursor on hover */
 }
 
-.background {
-  display: flex;
-  flex-direction: row;
+#add-more {
+  background-color: #f0f0f0; /* Example background color */
+  height: 240px;
 }
 
-#page2 {
-  min-height: 50vh;
-  width: 100%;
-  background: linear-gradient(black white 45deg);
-  padding: 8vw 0;
-  position: relative;
+#add-more i {
+  color: #333; /* Icon color */
 }
 
-#moving-text {
-  overflow-x: auto;
-  white-space: nowrap;
+/* Optional: add hover effect for links */
+.titleFont a {
+  text-decoration: none; /* Remove underline */
+  color: #007bff; /* Example link color */
 }
 
-#moving-text::-webkit-scrollbar {
-  display: none;
-}
-
-.con {
-  scale: 0.8;
-  white-space: nowrap;
-  display: inline-block;
-  animation-name: move;
-  animation-duration: 10s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-
-#moving-text h1 {
-  font-size: 9vw;
-  display: inline-block;
-}
-
-@keyframes move {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-20%);
-  }
+.titleFont a:hover {
+  text-decoration: underline; /* Underline on hover */
 }
 
 .loader {
@@ -189,110 +298,127 @@ body {
   }
 }
 
-footer{
+#content{
+  height: 25.4vh;
+}
+
+/* footer {
   background: black;
   color: white;
   text-align: center;
   padding: 5px;
   font-size: 16px;
   font-family: monospace;
+} */
+
+footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  font-size: 16px;
+  font-family: monospace;
+  position: relative; /* Ensure proper positioning */
+  bottom: 0;
+  width: 100%;
 }
 
-@media (width < 768px) {
-  body {
-    background: white;
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  #logo{
+    font-size: 35px;
+  }
+  #nav-bar {
+    font-size: 25px; /* Adjust font size for medium screens */
+  }
+
+  #nav-bar ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center; /* Align items to the start */
+  }
+
+  #nav-bar li {
+    margin: 5px 0; /* Adjust margin for stacked items */
   }
 
   .background {
-    margin-top: 15px;
+    height: 300px; /* Adjust container height */
   }
 
-  ::-webkit-scrollbar {
-    display: none;
-  }
-
-  .heading {
-    color: #efbf38;
-    font-size: 50px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-      sans-serif;
-    font-weight: 500;
-    text-shadow: 1px 2px 3px;
-  }
-  .titleFont a {
-    font-size: 40px;
-    text-shadow: 2px 3px 3px purple;
-  }
-
-  .background{
-    scale: 0.9;
-  }
-
-  .box-content{
-    margin-top: 100px;
-  }
-
-  .box-1 {
-    border: 5px solid black;
-    padding: 10px;
-    margin: 0 20px;
-    filter: drop-shadow(2px 4px 6px black);
-    background-color: transparent;
-  }
-
-  .box-1 img {
-    height: 320px;
-    width: 440px;
-    object-fit: cover;
+  .boxContent {
+    width: 350px; /* Adjust width for smaller screens */
+    height: 250px; /* Adjust height for smaller screens */
   }
 
   #add-more {
-    height: 350px;
-    width: 460px;
-    background-color: grey;
-    border: 5px black solid;
+    font-size: 20px; /* Adjust icon size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  #nav-bar ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: flex-end; /* Align items to the start */
   }
 
-  #add-more i {
-    scale: 9;
-    filter: drop-shadow(2px);
+  #nav-bar li:not(#menu-button) {
+    display: none; /* Hide nav items except menu button */
   }
 
-  #page2 {
-    min-height: 50vh;
-    width: 100%;
-    background: linear-gradient(black white 45deg);
-    padding: 8vw 0;
-    position: relative;
+  #menu-button {
+    display: block; /* Show the menu button */
   }
 
-  #moving-text {
-    overflow-x: none;
-    white-space: wrap;
+  #dropdown-menu {
+    display: block; /* Show dropdown menu on small screens */
+    width: 100vw; /* Auto width for dropdown on small screens */
   }
 
-  #moving-text::-webkit-scrollbar {
-    display: inline;
+  #dropdown-menu a {
+    text-align: center; /* Align text to the left */
   }
 
-  .con {
-    scale: 1;
-    white-space: nowrap;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation-name: move;
-    animation-duration: 0s;
-    animation-timing-function: none;
-    animation-iteration-count: none;
-  }
   .background {
-    display: block;
-    margin-top: 24px;
+    height: 250px; /* Adjust container height */
+  }
+
+  .boxContent {
+    width: 300px; /* Adjust width for smaller screens */
+    height: 200px; /* Adjust height for smaller screens */
+  }
+
+  #add-more {
+    font-size: 18px; /* Adjust icon size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #nav-bar {
+    font-size: 14px; /* Adjust font size for very small screens */
+    padding: 5px; /* Reduce padding */
+  }
+
+  #nav-bar h1#logo {
+    font-size: 1.1em; /* Adjust logo font size */
+    margin-left: 10px; /* Adjust margin for logo */
+  }
+
+  .background {
+    height: 200px; /* Adjust container height */
+  }
+
+  .boxContent {
+    width: 270px; /* Adjust width for very small screens */
+    height: 180px; /* Adjust height for very small screens */
+  }
+
+  #add-more {
+    font-size: 16px; /* Adjust icon size for very small screens */
+    height: 180px; /* Adjust height for very small screens */
   }
 
   .loader h1 {
-    margin-top: -40%;
+    margin-top: -50%;
     font-size: 12vw;
     text-align: center;
   }
@@ -304,3 +430,27 @@ footer{
     font-weight: 600;
   }
 }
+
+@media (min-width: 721px) {
+  #menu-button:hover + #dropdown-menu,
+  #dropdown-menu:hover {
+    display: block; /* Show dropdown menu on hover */
+  }
+}
+
+
+
+/* @media (width < 768px) {
+  .loader h1 {
+    margin-top: -50%;
+    font-size: 12vw;
+    text-align: center;
+  }
+
+  .loader h2 {
+    font-size: 10vw;
+    text-align: center;
+    font-family: "VT323", monospace;
+    font-weight: 600;
+  }
+} */
